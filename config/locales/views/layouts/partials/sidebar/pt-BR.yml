@@ -1,0 +1,8 @@
+pt-BR:
+  layouts:
+    partials:
+      sidebar:
+        exemplo: "Exemplo"
+        admin: "Admin"
+        users: "Usuários"
+        log_out: "Sair"
