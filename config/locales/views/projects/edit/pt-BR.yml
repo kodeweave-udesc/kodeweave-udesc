@@ -1,0 +1,4 @@
+pt-BR:
+  projects:
+    edit:
+      title: "Edição do projeto %{project_name}"

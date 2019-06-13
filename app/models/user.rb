@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :trackable
 
   belongs_to :account
+  has_and_belongs_to_many :projects
 
   validates :name, presence: true
   validates :cpf, presence: true, uniqueness: { case_sensitive: false }

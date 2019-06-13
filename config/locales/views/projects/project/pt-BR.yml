@@ -1,0 +1,7 @@
+pt-BR:
+  projects:
+    project:
+      card:
+        title: "Projeto"
+        name: "%{project_name}"
+        details: "Ver detalhes"

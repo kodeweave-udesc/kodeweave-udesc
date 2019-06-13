@@ -1,4 +1,6 @@
 pt-BR:
   dashboard:
     index:
-      title: "Gerenciamento da Rede"
+      title: "Kode Weave UDESC"
+      general:
+        title: "Informações"

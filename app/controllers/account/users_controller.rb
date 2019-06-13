@@ -57,7 +57,7 @@ class Account::UsersController < ApplicationController
     if @user.destroy!
       flash[:success] = I18n.t('controllers.account.users.destroy.success')
 
-      redirect_to(account.users_path)
+      redirect_to(account_users_path)
     else
       flash[:error] = I18n.t('controllers.account.users.destroy.error')
 

@@ -1,16 +1,12 @@
 Rails.application.routes.draw do
   resources :dashboard, only: [:index]
-  resources :rooms do
-    get :network_manager
-  end
-  resources :switches
-  resources :computers do
-    post :enable_network_access
-  end
-  resources :ports
+
   namespace :account do
     resources :users
   end
+
+  resources :projects
+
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }

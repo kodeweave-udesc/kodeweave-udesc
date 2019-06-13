@@ -1,0 +1,12 @@
+<div class="card mb-3 bg-dark text-light">
+  <div class="card-header h3">
+    <%= icon('fas','desktop', t('.title'), class: 'fa-fw h2 mb-0') %>
+    <%= link_to(t('.new'), new_project_path, class: "btn btn-success float-right") %>
+  </div>
+
+  <div class="card-body">
+    <div class="row">
+      <%= render(@projects, back_to_room: false) %>
+    </div>
+  </div>
+</div>

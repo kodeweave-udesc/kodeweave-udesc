@@ -1,0 +1,7 @@
+pt-BR:
+  projects:
+    show:
+      title: "Informações sobre o Projéto %{project_name}"
+      back: "Voltar"
+      edit: "Editar"
+      delete: "Deletar"
