@@ -2,7 +2,7 @@ class Account::UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
-    @users = current_account.users.order(:name)
+    @users = User.all.order(:name)
 
     authorize @users
   end
@@ -22,7 +22,7 @@ class Account::UsersController < ApplicationController
   end
 
   def create
-    @user = current_account.users.new(user_params)
+    @user = User.new(user_params)
 
     authorize @user
 

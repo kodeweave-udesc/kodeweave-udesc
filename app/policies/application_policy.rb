@@ -54,6 +54,6 @@ class ApplicationPolicy
   private
 
   def default_authorize
-    user.owner? && user.account == record.account
+    true
   end
 end

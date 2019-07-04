@@ -1,8 +1,3 @@
-# Create Accounts
-p "Create Accounts"
-
-udesc = Account.create!(name: "Udesc")
-
 # Create Users
 p "Create Users"
 
@@ -10,7 +5,6 @@ User.create!(
   name: "Coordenador 1",
   email: "adm@gmail.com",
   password: "nopasswd",
-  account: udesc,
   owner: true,
   cpf: "111.111.111-11"
 )
@@ -19,7 +13,6 @@ user1 = User.create!(
   name: "user 1",
   email: "user1@gmail.com",
   password: "nopasswd",
-  account: udesc,
   owner: false,
   cpf: "222.222.222-22"
 )
@@ -28,7 +21,6 @@ user2 = User.create!(
   name: "user 2",
   email: "user2@gmail.com",
   password: "nopasswd",
-  account: udesc,
   owner: false,
   cpf: "333.333.333-33"
 )
@@ -37,7 +29,6 @@ user3 = User.create!(
   name: "user 3",
   email: "user3@gmail.com",
   password: "nopasswd",
-  account: udesc,
   owner: false,
   cpf: "444.444.444-44"
 )
@@ -46,7 +37,6 @@ user4 = User.create!(
   name: "user 4",
   email: "user4@gmail.com",
   password: "nopasswd",
-  account: udesc,
   owner: false,
   cpf: "555.555.555-55"
 )
