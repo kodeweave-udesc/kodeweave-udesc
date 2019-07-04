@@ -27,3 +27,41 @@
     <% end %>
   </div>
 </div>
+
+<div class="card mb-3 bg-dark text-light">
+  <div class="card-header h3">
+    Tarefas
+  </div>
+  <div class="card-body">
+    <table class="table table-striped table-dark">
+      <thead>
+        <tr>
+          <th>
+            Nome
+          </th>
+          <th>
+            Previsão
+          </th>
+          <th>
+            status
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @project.tasks.each do |task| %>
+          <tr>
+            <td>
+              <%= task.name %>
+            </td>
+            <td>
+              <%= "uma data" %>
+            </td>
+            <td>
+              <%= task.status_name %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

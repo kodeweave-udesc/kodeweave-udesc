@@ -44,7 +44,7 @@ user4 = User.create!(
 # Create Projects
 p "Create Projects"
 
-Project.create!(
+proj1 = Project.create!(
   name: "teste 1",
   owner: user1,
   users: [user2, user4]
@@ -82,4 +82,28 @@ Project.create!(
   owner: user2,
   users: [user4],
   status: :finished
+)
+
+Task.create!(
+  name: "tarefa 01",
+  project: proj1,
+  status: :in_progress
+)
+
+Task.create!(
+  name: "tarefa 02",
+  project: proj1,
+  status: :in_progress
+)
+
+Task.create!(
+  name: "tarefa 03",
+  project: proj1,
+  status: :in_progress
+)
+
+Task.create!(
+  name: "tarefa 04",
+  project: proj1,
+  status: :in_progress
 )
