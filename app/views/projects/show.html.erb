@@ -40,10 +40,19 @@
             Nome
           </th>
           <th>
-            Previsão
+            Inicio Previsto
+          </th>
+          <th>
+            Fim Previsto
+          </th>
+          <th>
+            Descrição
           </th>
           <th>
             status
+          </th>
+          <th>
+            Ações
           </th>
         </tr>
       </thead>
@@ -54,10 +63,19 @@
               <%= task.name %>
             </td>
             <td>
-              <%= "uma data" %>
+              <%= I18n.l(task.goals_start_at, format: :long) %>
+            </td>
+            <td>
+              <%= I18n.l(task.goals_end_at, format: :long) %>
+            </td>
+            <td>
+              <%= task.short_detailing %>
             </td>
             <td>
               <%= task.status_name %>
+            </td>
+            <td class="d-flex justify-content-center">
+              <%= link_to(icon('far','eye'), project_tasks_path(@project)) %>
             </td>
           </tr>
         <% end %>

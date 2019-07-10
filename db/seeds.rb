@@ -87,23 +87,51 @@ Project.create!(
 Task.create!(
   name: "tarefa 01",
   project: proj1,
-  status: :in_progress
+  status: :in_progress,
+  goals_end_at: Time.current + 5.days,
+  goals_start_at: Time.current - 5.days,
+  real_start_at: Time.current - 4.days,
+  obs: "observação",
+  full_detailing: "completo aksjdlasjdkasjd kasj dlkasj ldkaj slkdajs lkasjdlkasjl djaslkd jaslk djkalsdj ",
+  short_detailing: "parcial alsdjas as s adas ads ",
+  user: user4
 )
 
 Task.create!(
   name: "tarefa 02",
   project: proj1,
-  status: :in_progress
+  status: :in_progress,
+  goals_end_at: Time.current + 5.days,
+  goals_start_at: Time.current - 5.days,
+  real_start_at: Time.current - 4.days,
+  obs: "observação",
+  full_detailing: "completo aksjdlasjdkasjd kasj dlkasj ldkaj slkdajs lkasjdlkasjl djaslkd jaslk djkalsdj ",
+  short_detailing: "parcial alsdjas as s adas ads ",
+  user: user3
 )
 
 Task.create!(
   name: "tarefa 03",
   project: proj1,
-  status: :in_progress
+  status: :in_progress,
+  goals_end_at: Time.current + 5.days,
+  goals_start_at: Time.current - 5.days,
+  real_start_at: Time.current - 4.days,
+  obs: "observação",
+  full_detailing: "completo aksjdlasjdkasjd kasj dlkasj ldkaj slkdajs lkasjdlkasjl djaslkd jaslk djkalsdj ",
+  short_detailing: "parcial alsdjas as s adas ads ",
+  user: user2
 )
 
 Task.create!(
   name: "tarefa 04",
   project: proj1,
-  status: :in_progress
+  status: :in_progress,
+  goals_end_at: Time.current + 5.days,
+  goals_start_at: Time.current - 5.days,
+  real_start_at: Time.current - 4.days,
+  obs: "observação",
+  full_detailing: "completo aksjdlasjdkasjd kasj dlkasj ldkaj slkdajs lkasjdlkasjl djaslkd jaslk djkalsdj ",
+  short_detailing: "parcial alsdjas as s adas ads ",
+  user: user4
 )
