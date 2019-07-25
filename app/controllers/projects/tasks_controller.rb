@@ -85,8 +85,9 @@ module Projects
         :goals_start_at,
         :obs,
         :full_detailing,
-        :short_detailing
-      ).merge(user: current_user)
+        :short_detailing,
+        :user_id
+      )
     end
   end
 end

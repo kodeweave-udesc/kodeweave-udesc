@@ -50,6 +50,15 @@
         </div>
       </div>
 
+      <div class="form-group row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <%= form.label(:user_id) %>
+            <%= form.select(:user_id, User.all.collect { |user| [user.name, user.id] }, {}, class: "form-control") %>
+          </div>
+        </div>
+      </div>
+
       <div class="float-right">
         <%= link_to('Voltar', :back, class: "btn btn-primary") %>
         <%= form.submit class:"btn btn-success" %>
@@ -57,3 +66,10 @@
     <% end %>
   </div>
 </div>
+
+<script>
+  $( "#task_user_id" ).select2({
+    theme: "bootstrap",
+    language: "zh-TW"
+  });
+</script>
