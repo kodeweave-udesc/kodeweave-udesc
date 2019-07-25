@@ -1,0 +1,5 @@
+pt-BR:
+  projects:
+    tasks:
+      edit:
+        title: "Edição da tarefa %{task_name}"

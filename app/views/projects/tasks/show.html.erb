@@ -1,0 +1,61 @@
+<div class="card mb-3 bg-dark text-light">
+  <div class="card-header h3">
+    <%= icon('fas','desktop', t('.title', task_name: @task.name), class: 'fa-fw h2 mb-0') %>
+    <%= link_to(t('.delete'), project_task_path(id: @task.id, project_id: @task.project.id), method: :delete, class: "btn btn-danger float-right") %>
+  </div>
+  <div class="card-body">
+    <%= form_with(model: @task,  url: project_tasks_path(), local: true) do |form| %>
+      <div class="form-group row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <%= form.label(:name) %>
+            <%= form.text_field(:name, autofocus: true, disabled: true, class: "form-control") %>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <%= form.label(:goals_end_at) %>
+            <%= form.date_field(:goals_end_at, value: form.object.try(:strftime,"%m/%d/%Y"), disabled: true, class: "form-control") %>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <%= form.label(:goals_start_at) %>
+            <%= form.date_field(:goals_start_at, value: form.object.try(:strftime,"%m/%d/%Y"), disabled: true, class: "form-control") %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <%= form.label(:obs) %>
+            <%= form.text_field(:obs, disabled: true, class: "form-control") %>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <%= form.label(:short_detailing) %>
+            <%= form.text_field(:short_detailing, disabled: true, class: "form-control") %>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <%= form.label(:full_detailing) %>
+            <%= form.text_area(:full_detailing, disabled: true, class: "form-control") %>
+          </div>
+        </div>
+      </div>
+
+      <div class="float-right">
+        <%= link_to(t('.back'), project_path(@task.project), class: "btn btn-primary") %>
+        <%= link_to(t('.start'), '', class: "btn btn-warning") %>
+        <%= link_to(t('.edit'), edit_project_task_path(id: @task.id, project_id: @task.project.id), class: "btn btn-primary") %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -30,7 +30,8 @@
 
 <div class="card mb-3 bg-dark text-light">
   <div class="card-header h3">
-    Tarefas
+    <%= icon('fas','desktop', 'Tarefas', class: 'fa-fw h2 mb-0') %>
+    <%= link_to('Nova Tarefa', new_project_task_path(@project), class: "btn btn-success float-right") %>
   </div>
   <div class="card-body">
     <table class="table table-striped table-dark">
@@ -63,10 +64,10 @@
               <%= task.name %>
             </td>
             <td>
-              <%= I18n.l(task.goals_start_at, format: :long) %>
+              <%= task.goals_start_at.present? ? I18n.l(task.goals_start_at, format: :long) : "" %>
             </td>
             <td>
-              <%= I18n.l(task.goals_end_at, format: :long) %>
+              <%= task.goals_end_at.present? ? I18n.l(task.goals_end_at, format: :long) : "" %>
             </td>
             <td>
               <%= task.short_detailing %>
@@ -75,7 +76,7 @@
               <%= task.status_name %>
             </td>
             <td class="d-flex justify-content-center">
-              <%= link_to(icon('far','eye'), project_tasks_path(@project)) %>
+              <%= link_to(icon('far','eye'), project_task_path(id: task, project_id: task.project.id)) %>
             </td>
           </tr>
         <% end %>

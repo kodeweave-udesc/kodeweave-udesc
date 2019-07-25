@@ -38,7 +38,7 @@ class ProjectsController < ApplicationController
     else
       flash[:error] = I18n.t('controllers.projects.update.error')
 
-    render(:edit)
+      render(:edit)
     end
   end
 

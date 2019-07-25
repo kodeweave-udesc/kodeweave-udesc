@@ -1,0 +1,19 @@
+pt-BR:
+  activerecord:
+    models:
+      task:
+        one: "Tarefa"
+        other: "Tarefas"
+    attributes:
+      task:
+        name: "Nome"
+        goals_end_at: "Termino Previsto"
+        goals_start_at: "Início Previsto"
+        real_end_at: ""
+        real_start_at: ""
+        status: ""
+        obs: "Obsevação"
+        full_detailing: "Descrição completa"
+        short_detailing: "Descrição breve"
+        project: ""
+        user: ""

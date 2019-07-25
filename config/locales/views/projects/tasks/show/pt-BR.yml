@@ -1,0 +1,9 @@
+pt-BR:
+  projects:
+    tasks:
+      show:
+        title: "Informações sobre a Tarefa %{task_name}"
+        back: "Voltar"
+        start: "Iniciar"
+        edit: "Editar"
+        delete: "Deletar"

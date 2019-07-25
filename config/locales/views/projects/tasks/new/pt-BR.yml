@@ -1,0 +1,5 @@
+pt-BR:
+  projects:
+    tasks:
+      new:
+        title: "Criação de um Novo projeto"

@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   end
 
   resources :projects do
-    resources :tasks
+    scope module: :projects do
+      resources :tasks
+    end
   end
 
   devise_for :users, controllers: {
