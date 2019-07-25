@@ -17,6 +17,7 @@ gem 'rails-i18n'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
+gem "select2-rails"
 
 gem 'jbuilder', '~> 2.5'
 gem 'turbolinks', '~> 5'
