@@ -16,6 +16,17 @@
     </div>
   </div>
 
+  <div class="form-group row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.label(:user_ids) %>
+        <%= form.select(:user_ids, User.all.collect { |user| [user.name, user.id] },
+                                                 { prompt: "Selecione os Usuários" },
+                                                 { multiple: true, class: "form-control" }) %>
+      </div>
+    </div>
+  </div>
+
   <div class="float-right">
     <%= link_to(t('.back'), :back, class: "btn btn-primary") %>
     <%= form.submit class:"btn btn-success" %>

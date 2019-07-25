@@ -31,6 +31,8 @@ class ProjectsController < ApplicationController
   end
 
   def update
+    binding.pry
+
     if @project.update(project_params)
       flash[:success] = I18n.t('controllers.projects.update.success')
 
@@ -61,7 +63,8 @@ class ProjectsController < ApplicationController
 
   def project_params
     params.require(:project).permit(
-      :name
+      :name,
+      user_ids: []
     )
   end
 end
