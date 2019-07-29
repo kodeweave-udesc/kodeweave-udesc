@@ -4,4 +4,5 @@ pt-BR:
       title: "Informações sobre o Projeto %{project_name}"
       back: "Voltar"
       edit: "Editar"
+      schedule: "Calendário"
       delete: "Deletar"

@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   end
 
   resources :projects do
+    get :schedule
+
     scope module: :projects do
       resources :tasks
     end

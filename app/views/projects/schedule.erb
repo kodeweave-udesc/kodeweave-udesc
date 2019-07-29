@@ -1,0 +1,32 @@
+<div class="card mb-3 bg-dark text-light">
+  <div class="card-header h3">
+    <%= icon('fas','desktop', t('.title', project_name: @project.name), class: 'fa-fw h2 mb-0') %>
+  </div>
+
+  <div class="card-body">
+    <div class="row">
+      <div id="calendar"/>
+    </div>
+  </div>
+</div>
+
+<script>
+  function eventCalendar() {
+    return $('#calendar').fullCalendar(
+      {
+        events: "http://localhost:3000/projects/<%= @project.id %>/schedule"
+      }
+    );
+  };
+
+  function clearCalendar() {
+    $('#calendar').fullCalendar('delete');
+    $('#calendar').html('');
+  };
+
+  $(document).on('turbolinks:load', function(){
+    eventCalendar();
+  });
+
+  $(document).on('turbolinks:before-cache', clearCalendar);
+</script>

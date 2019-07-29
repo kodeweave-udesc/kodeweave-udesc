@@ -15,11 +15,13 @@ gem "pundit"
 gem 'bootstrap', '~> 4.3.1'
 gem 'font-awesome-sass', '~> 5.8.1'
 gem 'jquery-rails'
+gem 'momentjs-rails'
 gem 'rails-i18n'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
-gem "select2-rails"
+gem 'select2-rails'
+gem 'fullcalendar'
 
 gem 'jbuilder', '~> 2.5'
 gem 'turbolinks', '~> 5'

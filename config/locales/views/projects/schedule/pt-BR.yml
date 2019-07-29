@@ -1,0 +1,5 @@
+pt-BR:
+  projects:
+    schedule:
+      title: "Cronograma do Projeto %{project_name}"
+      back: "Voltar"

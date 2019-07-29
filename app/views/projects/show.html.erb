@@ -33,6 +33,7 @@
 
       <div class="float-right">
         <%= link_to(t('.back'), projects_path(), class: "btn btn-primary") %>
+        <%= link_to(t('.schedule'), project_schedule_path(project_id: @project), class: "btn btn-warning") %>
         <%= link_to(t('.edit'), edit_project_path(@project), class: "btn btn-primary") %>
       </div>
     <% end %>

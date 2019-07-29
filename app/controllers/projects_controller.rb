@@ -54,7 +54,17 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def schedule
+    @project = Project.find(params[:project_id])
+
+    respond_to do |format|
+      format.json { render json: project_json }
+      format.html {}
+    end
+  end
+
   private
+
   def set_project
     @project = Project.find(params[:id])
   end
@@ -64,5 +74,18 @@ class ProjectsController < ApplicationController
       :name,
       user_ids: []
     )
+  end
+
+  def project_json
+    @project.tasks.map do |task|
+      {
+        id: task.id,
+        title: task.name,
+        description: task.short_detailing,
+        start: task.goals_start_at,
+        end: task.goals_end_at,
+        url: project_task_path(id: task, project_id: task.project.id, format: :html)
+      }
+    end
   end
 end
