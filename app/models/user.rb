@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_and_belongs_to_many :projects
   has_many :tasks
 
-  validates :cpf, uniqueness: { case_sensitive: false }
+  # validates :cpf, uniqueness: { case_sensitive: false }
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
