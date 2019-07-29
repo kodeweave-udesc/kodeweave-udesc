@@ -1,0 +1,8 @@
+pt-BR:
+  tasks:
+    task:
+      card:
+        title: "Tarefa"
+        name_project: "Projeto: %{project_name}"
+        name: "Tarefa: %{task_name}"
+        details: "Ver detalhes"

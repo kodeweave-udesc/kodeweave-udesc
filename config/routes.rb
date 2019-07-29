@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'tasks/index'
   resources :dashboard, only: [:index]
 
   namespace :account do
@@ -10,6 +11,8 @@ Rails.application.routes.draw do
       resources :tasks
     end
   end
+
+  resources :tasks, only: [:index]
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',

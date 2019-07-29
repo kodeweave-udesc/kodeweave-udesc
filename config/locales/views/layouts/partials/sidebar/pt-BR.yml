@@ -2,8 +2,8 @@ pt-BR:
   layouts:
     partials:
       sidebar:
-        exemplo: "Exemplo"
         admin: "Admin"
         users: "Usuários"
         projects: "Projetos"
+        tasks: "Tarefas"
         log_out: "Sair"
