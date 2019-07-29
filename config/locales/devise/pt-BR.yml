@@ -121,6 +121,7 @@ pt-BR:
         forgot_your_password: Esqueceu sua senha?
         sign_in: Login
         sign_in_with_provider: Entrar com %{provider}
+        google_oauth2: Google
         sign_up: Inscrever-se
       minimum_password_length:
         one: "(Mínimo de %{count} caractere)"
