@@ -11,15 +11,35 @@ class User < ApplicationRecord
   validates :cpf, uniqueness: { case_sensitive: false }
 
   def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.token = auth.credentials.token
-      user.expires = auth.credentials.expires
-      user.expires_at = auth.credentials.expires_at
-      user.refresh_token = auth.credentials.refresh_token
-      user.email = auth.info.email
-      user.cpf = auth.info.email
-      user.name = auth.info.name
-      user.password =  SecureRandom.hex(40)
+    user = User.find_by(email: auth.info.email)
+
+    if user.present?
+      user.update!(
+        provider: auth.provider,
+        uid: auth.uid,
+        token: auth.credentials.token,
+        expires: auth.credentials.expires,
+        expires_at: auth.credentials.expires_at,
+        refresh_token: auth.credentials.refresh_token,
+        name: auth.info.name,
+        avatar: auth.info.image
+      )
+
+      return user
     end
+
+    user = User.create!(
+      provider: auth.provider,
+      uid: auth.uid,
+      token: auth.credentials.token,
+      expires: auth.credentials.expires,
+      expires_at: auth.credentials.expires_at,
+      refresh_token: auth.credentials.refresh_token,
+      email: auth.info.email,
+      cpf: auth.info.email,
+      name: auth.info.name,
+      avatar: auth.info.image,
+      password:  SecureRandom.hex(40)
+    )
   end
 end
