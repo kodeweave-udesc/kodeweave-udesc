@@ -10,6 +10,10 @@ class User < ApplicationRecord
 
   validates :cpf, uniqueness: { case_sensitive: false }
 
+  def image
+    avatar.present? ? avatar : 'default-user3.png'
+  end
+
   def self.from_omniauth(auth)
     user = User.find_by(email: auth.info.email)
 
