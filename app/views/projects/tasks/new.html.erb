@@ -1,6 +1,6 @@
 <div class="card mb-3 bg-dark text-light">
   <div class="card-header h3">
-    <%= icon('fas','desktop', 'Tarefas', class: 'fa-fw h2 mb-0') %>
+    <%= icon('fas','clipboard-list', 'Tarefas', class: 'fa-fw h2 mb-0') %>
   </div>
   <div class="card-body">
     <%= form_with(model: @task,  url: project_tasks_path(), local: true) do |form| %>
