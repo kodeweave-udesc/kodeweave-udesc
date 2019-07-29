@@ -5,6 +5,8 @@ ruby '2.6.2'
 
 gem 'devise'
 gem 'devise-i18n'
+gem 'omniauth-google-oauth2', '~> 0.2.2'
+gem 'google-api-client', '~> 0.13.6'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.3'
@@ -31,6 +33,7 @@ group :development, :test do
   gem 'faker'
   gem 'rspec-rails', '~> 3.8', '>= 3.8.2'
   gem 'pry'
+  gem 'dotenv-rails'
 end
 
 group :development do
