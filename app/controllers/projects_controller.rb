@@ -63,6 +63,11 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def dashboard
+    @project = Project.find(params[:project_id])
+    @data = build_data_metrics
+  end
+
   private
 
   def set_project
@@ -90,5 +95,13 @@ class ProjectsController < ApplicationController
         user_name: task.user
       }
     end
+  end
+
+  def build_data_metrics
+    {
+      late: 50,
+      in_progress: 30,
+      done: 40,
+    }
   end
 end

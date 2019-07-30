@@ -1,0 +1,5 @@
+pt-BR:
+  projects:
+    dashboard:
+      title: "Metricas do Projeto %{project_name}"
+      back: "Voltar"
