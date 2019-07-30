@@ -9,7 +9,7 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    @project = Project.new
+    @project = Project.new(owner: current_user)
   end
 
   def edit
@@ -17,7 +17,6 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    @project.owner = User.find(params.require(:project)[:owner])
 
     if @project.save
       flash[:success] = I18n.t('controllers.projects.create.success')
@@ -77,6 +76,7 @@ class ProjectsController < ApplicationController
   def project_params
     params.require(:project).permit(
       :name,
+      :user_id,
       user_ids: []
     )
   end
