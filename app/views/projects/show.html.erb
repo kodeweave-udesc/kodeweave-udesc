@@ -1,7 +1,10 @@
 <div class="card mb-3 bg-dark text-light">
   <div class="card-header h3">
     <%= icon('fas','desktop', t('.title', project_name: @project.name), class: 'fa-fw h2 mb-0') %>
-    <%= link_to(t('.delete'), @project, method: :delete, class: "btn btn-danger float-right") %>
+      <div class="float-right">
+      <%= link_to(t('.infos'), project_dashboard_path(project_id: @project), class: "btn btn-info") %>
+      <%= link_to(t('.delete'), @project, method: :delete, class: "btn btn-danger") %>
+    </div>
   </div>
   <div class="card-body">
     <%= form_with(model: @project, local: true) do |form| %>
