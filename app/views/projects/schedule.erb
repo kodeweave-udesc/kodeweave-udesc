@@ -4,7 +4,7 @@
   </div>
 
   <div class="card-body">
-    <div class="row">
+    <div class="row bg-light text-dark">
       <div id="calendar"/>
     </div>
   </div>
@@ -12,12 +12,37 @@
 
 <script>
   function eventCalendar() {
-    return $('#calendar').fullCalendar(
-      {
-        events: "<%= project_schedule_path(project_id: @project) %>"
-      }
-    );
+    return $('#calendar').fullCalendar({
+      events: "<%= project_schedule_path(project_id: @project) %>",
+      header: {
+        left: 'prev next',
+        center: 'title',
+        right: 'today month,agendaWeek,agendaDay,listMonth'
+      },
+      selectable: true,
+      selectHelper: true,
+      editable: true,
+      eventLimit: true,
+      eventDrop: update_task
+    });
   };
+
+  function update_task(task, delta, revertFunc) {
+        task_data = {
+          task: {
+            id: task.id,
+            project_id: "<%= @project.id %>",
+            goals_start_at: task.start.format(),
+            goals_end_at: task.end.format(),
+            calendar: true
+          }
+        };
+        $.ajax({
+            url: task.update_url,
+            data: task_data,
+            type: 'PATCH'
+        });
+      }
 
   function clearCalendar() {
     $('#calendar').fullCalendar('delete');

@@ -83,8 +83,11 @@ class ProjectsController < ApplicationController
         title: task.name,
         description: task.short_detailing,
         start: task.goals_start_at,
-        end: task.goals_end_at,
-        url: project_task_path(id: task, project_id: task.project.id, format: :html)
+        end: task.goals_end_at + 1.day,
+        url: project_task_path(id: task, project_id: task.project.id, format: :html),
+        update_url: project_task_path(id: task, project_id: task.project.id),
+        color: task.color,
+        user_name: task.user
       }
     end
   end

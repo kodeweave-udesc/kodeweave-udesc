@@ -45,7 +45,11 @@ module Projects
       if @task.update(task_params)
         flash[:success] = I18n.t('controllers.projects.update.success')
 
-        redirect_to(project_task_path(id: @task, project_id: project.id))
+        if params[:task][:calendar].present?
+          redirect_to :back
+        else
+          redirect_to(project_task_path(id: @task, project_id: project.id))
+        end
       else
         flash[:error] = I18n.t('controllers.projects.update.error')
 

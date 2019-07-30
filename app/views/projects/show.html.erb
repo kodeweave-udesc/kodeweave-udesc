@@ -53,6 +53,9 @@
             Nome
           </th>
           <th>
+            Responsável
+          </th>
+          <th>
             Inicio Previsto
           </th>
           <th>
@@ -60,9 +63,6 @@
           </th>
           <th>
             Descrição
-          </th>
-          <th>
-            status
           </th>
           <th>
             Ações
@@ -76,6 +76,10 @@
               <%= task.name %>
             </td>
             <td>
+              <%= image_tag(task.user.image, class: "avatar-image") %>
+              <%= task.user.name %>
+            </td>
+            <td>
               <%= task.goals_start_at.present? ? I18n.l(task.goals_start_at, format: :long) : "" %>
             </td>
             <td>
@@ -83,9 +87,6 @@
             </td>
             <td>
               <%= task.short_detailing %>
-            </td>
-            <td>
-              <%= task.status_name %>
             </td>
             <td class="d-flex justify-content-center">
               <%= link_to(icon('far','eye'), project_task_path(id: task, project_id: task.project.id)) %>
@@ -108,3 +109,14 @@
     language: "zh-TW"
   });
 </script>
+
+<style>
+.avatar-image {
+  height: 30px;
+  width: 30px;
+  padding: 0px;
+  margin: 0px;
+  border: 2px solid;
+  border-radius: 25px;
+}
+</style>
