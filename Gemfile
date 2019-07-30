@@ -22,6 +22,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 gem 'select2-rails'
 gem 'fullcalendar'
+gem 'chart-js-rails'
 
 gem 'jbuilder', '~> 2.5'
 gem 'turbolinks', '~> 5'

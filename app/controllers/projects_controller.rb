@@ -99,9 +99,12 @@ class ProjectsController < ApplicationController
 
   def build_data_metrics
     {
-      late: 50,
-      in_progress: 30,
-      done: 40,
+      tasks: {
+        late: 26,
+        in_progress: 5,
+        done: 50,
+        not_started: 23
+      }
     }
   end
 end

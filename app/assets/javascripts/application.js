@@ -25,3 +25,4 @@
 //= require select2
 //= require select2-full
 //= require select2_locale_pt-BR
+//= require Chart.min

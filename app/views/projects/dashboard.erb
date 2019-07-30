@@ -4,16 +4,86 @@
   </div>
 
   <div class="card-body">
-    <div class="row">
-      Iniciados e não completados no tempo correto: <%= @data[:late] %>%
-    </div>
 
     <div class="row">
-      Iniciados: <%= @data[:in_progress] %>%
+      <div class="col-6">
+        <canvas id="pieChartStatus"></canvas>
+      </div>
+
+      <div class="col-6">
+        <canvas id="pieChartDelivered"></canvas>
+      </div>
     </div>
 
+    <br />
+
     <div class="row">
-      Completos: <%= @data[:done] %>%
+      <div class="col-12">
+        <div class="progress" style="height: 30px">
+          <div class="progress-bar bg-danger" style="width: <%= @data[:tasks][:late] %>%;">Entregas em atraso <%= @data[:tasks][:late] %>%</div>
+          <div class="progress-bar bg-success" style="width: <%= 100 - @data[:tasks][:late] %>%;">Entregas no praso <%= 100 - @data[:tasks][:late] %>%</div>
+        </div>
+      </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+      <table class="table table-striped table-dark">
+        <thead>
+          <tr>
+            <th> Avatar </th>
+            <th> Nome </th>
+            <th> Total </th>
+            <th> Em progresso </th>
+            <th> Entragues </th>
+            <th> Atrasos </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @project.users.each do |user| %>
+            <tr>
+              <td> <%= image_tag(user.image, class: "avatar-image avatar-image-list") %> </td>
+              <td> <%= user.name %> </td>
+              <td> <%= @project.tasks.where(user_id: user.id).count %> </td>
+              <td> <%= @project.tasks.done.where(user_id: user.id).count %> </td>
+              <td> <%= @project.tasks.in_progress.where(user_id: user.id).count %> </td>
+              <td> <%= @project.tasks.late.where(user_id: user.id).count %> </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
+
+<script>
+var pieChartStatus = document.getElementById("pieChartStatus").getContext('2d');
+var myPieChart = new Chart(pieChartStatus, {
+  type: 'doughnut',
+  data: {
+    labels: ["Iniciados", "Completos", "Não iniciados"],
+    datasets: [{
+      data: <%= [ @data[:tasks][:in_progress], @data[:tasks][:done], @data[:tasks][:not_started] ] %>,
+      backgroundColor: ["#2156d1", "#22bd1c", "#e0db3d"],
+      hoverBackgroundColor: ["#0e2d75", "#1f4d0b", "#ada917"]
+    }]
+  },
+  options: { responsive: true }
+});
+
+var pieChartDelivered = document.getElementById("pieChartDelivered").getContext('2d');
+var myPieChart = new Chart(pieChartDelivered, {
+  type: 'doughnut',
+  data: {
+    labels: ["No Praso", "Atrasado"],
+    datasets: [{
+      data: <%= [ 100 - @data[:tasks][:late], @data[:tasks][:late] ] %>,
+      backgroundColor: ["#22bd1c", "#e8462a"],
+      hoverBackgroundColor: ["#1f4d0b", "#b5240b"]
+    }]
+  },
+  options: { responsive: true }
+});
+
+</script>
