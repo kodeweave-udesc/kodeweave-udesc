@@ -6,6 +6,7 @@
 @import "select2";
 @import "select2-bootstrap";
 @import "calendar";
+@import "bootstrap-datepicker";
 
 #toast-container {
   .toast {
@@ -25,4 +26,8 @@
 .avatar-image-list {
   height: 30px;
   width: 30px;
+}
+
+.select2-selection {
+  height: 38px !important;
 }

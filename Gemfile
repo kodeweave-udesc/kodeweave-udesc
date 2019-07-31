@@ -23,6 +23,7 @@ gem 'webpacker'
 gem 'select2-rails'
 gem 'fullcalendar'
 gem 'chart-js-rails'
+gem 'bootstrap-datepicker-rails'
 
 gem 'jbuilder', '~> 2.5'
 gem 'turbolinks', '~> 5'

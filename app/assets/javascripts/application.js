@@ -26,3 +26,7 @@
 //= require select2-full
 //= require select2_locale_pt-BR
 //= require Chart.min
+
+//= require bootstrap-datepicker
+//= require bootstrap-datepicker/core
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.js

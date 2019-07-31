@@ -26,3 +26,13 @@
   </body>
   <%= javascript_include_tag('theme/theme', 'data-turbolinks-track': 'reload') %>
 </html>
+
+<script>
+  $('.datepicker').datepicker({
+    format: "dd/mm/yyyy",
+    language: "pt-BR",
+    daysOfWeekHighlighted: "0,6",
+    autoclose: true,
+    todayHighlight: true
+  });
+</script>

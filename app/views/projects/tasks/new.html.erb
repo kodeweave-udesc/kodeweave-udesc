@@ -13,16 +13,20 @@
         </div>
 
         <div class="col-md-4">
-          <div class="form-group">
-            <%= form.label(:goals_end_at) %>
-            <%= form.date_field(:goals_end_at, value: form.object.try(:strftime,"%m/%d/%Y"), class: "form-control") %>
+          <%= form.label(:date_interval) %>
+          <div class="datepicker input-daterange input-group">
+            <%= form.text_field(:goals_start_at, class: "form-control") %>
+            <div class="input-group-addon">
+              <span class="input-group-text"> to </span>
+            </div>
+            <%= form.text_field(:goals_end_at, class: "form-control") %>
           </div>
         </div>
 
         <div class="col-md-4">
           <div class="form-group">
-            <%= form.label(:goals_start_at) %>
-            <%= form.date_field(:goals_start_at, value: form.object.try(:strftime,"%m/%d/%Y"), class: "form-control") %>
+            <%= form.label(:user_id) %>
+            <%= form.select(:user_id, User.all.collect { |user| [user.name, user.id] }, {}, class: "form-control") %>
           </div>
         </div>
       </div>
@@ -46,15 +50,6 @@
           <div class="form-group">
             <%= form.label(:full_detailing) %>
             <%= form.text_area(:full_detailing, class: "form-control") %>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-group row">
-        <div class="col-md-4">
-          <div class="form-group">
-            <%= form.label(:user_id) %>
-            <%= form.select(:user_id, User.all.collect { |user| [user.name, user.id] }, {}, class: "form-control") %>
           </div>
         </div>
       </div>
