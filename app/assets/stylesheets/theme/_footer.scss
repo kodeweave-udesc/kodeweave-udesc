@@ -4,7 +4,9 @@ footer.sticky-footer {
   right: 0;
   bottom: 0;
   width: calc(100% - #{$sidebar-collapsed-width});
+  width: calc(100% - #{$sidebar-collapsed-width});
   height: $sticky-footer-height;
+  max-height: $sticky-footer-height;
   background-color: $udesc-green;
   color: $white;
   .copyright {

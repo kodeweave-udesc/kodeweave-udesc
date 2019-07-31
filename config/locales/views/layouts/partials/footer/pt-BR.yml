@@ -2,4 +2,4 @@ pt-BR:
   layouts:
     partials:
       footer:
-        copyright: "Copyright © Mini 2019"
+        copyright: ""
