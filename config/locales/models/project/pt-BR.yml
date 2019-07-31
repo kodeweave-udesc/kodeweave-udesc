@@ -7,3 +7,5 @@ pt-BR:
     attributes:
       project:
         name: "Nome"
+        user_id: "Coordenador"
+        user_ids: "Equipe"
