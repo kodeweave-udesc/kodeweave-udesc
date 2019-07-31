@@ -1,6 +1,6 @@
-<div class="card mb-3 bg-outline-dark udesc-green-light">
+<div class="card mb-3 bg-light ">
   <div class="card-header h3">
-    <%= icon('fas','desktop', t('.title', project_name: @project.name), class: 'fa-fw h2 mb-0') %>
+    <%= icon('fas','project-diagram', t('.title', project_name: @project.name), class: 'fa-fw h2 mb-0') %>
   </div>
 
   <div class="card-body">
@@ -29,15 +29,15 @@
     <br />
 
     <div class="row">
-      <table class="table table-striped table-success table-hover">
+      <table class="table table-striped table-bordered table-hover">
         <thead>
           <tr>
             <th> Avatar </th>
             <th> Nome </th>
-            <th> Total </th>
             <th> Em progresso </th>
             <th> Entragues </th>
             <th> Atrasos </th>
+            <th> Total </th>
           </tr>
         </thead>
         <tbody>
@@ -45,10 +45,10 @@
             <tr>
               <td> <%= image_tag(user.image, class: "avatar-image avatar-image-list") %> </td>
               <td> <%= user.name %> </td>
-              <td> <%= @project.tasks.where(user_id: user.id).count %> </td>
               <td> <%= @project.tasks.done.where(user_id: user.id).count %> </td>
               <td> <%= @project.tasks.in_progress.where(user_id: user.id).count %> </td>
               <td> <%= @project.tasks.late.where(user_id: user.id).count %> </td>
+              <td> <%= @project.tasks.where(user_id: user.id).count %> </td>
             </tr>
           <% end %>
         </tbody>

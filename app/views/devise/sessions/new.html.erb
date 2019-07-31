@@ -1,7 +1,7 @@
 <div class="card card-login mx-auto mt-5">
   <div class="card-header">
-    <%= icon('fas','user-secret', class: 'fa-fw h2 mb-0') %>
-    <span class="h4"><%= t('.sign_in') %></span>
+    <%= image_tag('logo.svg', class: "avatar-image") %>
+    <span class="h4 align-middle"><%= t('.sign_in') %></span>
   </div>
   <div class="card-body">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |form| %>
@@ -34,7 +34,7 @@
           </div>
         </div>
       </div>
-      <%= form.submit(t('.sign_in'), class: "btn btn-primary btn-block") %>
+      <%= form.submit(t('.sign_in'), class: "btn btn-info btn-block") %>
     <% end %>
     <br />
   </div>

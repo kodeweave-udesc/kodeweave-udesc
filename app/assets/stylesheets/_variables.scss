@@ -44,16 +44,17 @@ $yellow:  #ffc107 !default;
 $green:   #28a745 !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
-$udesc-green: #0c5417 !default;
+
+$udesc-green: #336633 !default;
 $udesc-green-light: #c4f5c6 !default;
-$udesc-green-dark: #072601 !default;
+$udesc-green-dark: #204220 !default;
 $udesc-red: #6e0e05 !default;
 
-$udesc-warning: #ffff75 !default;
-$udesc-info:    #7b79a0   !default;
-$udesc-success: #93fd97  !default;
-$udesc-danger:  #db6060    !default;
-$udesc-primary: #83a2f0   !default;
+$udesc-warning: rgba(186, 121, 37, 1) !default;
+$udesc-info:    rgba(64, 100, 119, 1)   !default;
+$udesc-success: $udesc-green  !default;
+$udesc-danger:  rgba(209, 87, 87, 1)    !default;
+$udesc-primary: $blue   !default;
 
 $colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default

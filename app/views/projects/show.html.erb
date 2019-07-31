@@ -1,30 +1,30 @@
-<div class="card mb-3 bg-outline-dark udesc-green-light">
+<div class="card mb-3 bg-light ">
   <div class="card-header h3">
-    <%= icon('fas','desktop', t('.title', project_name: @project.name), class: 'fa-fw h2 mb-0') %>
+    <%= icon('fas','project-diagram', t('.title', project_name: @project.name), class: 'fa-fw h2 mb-0') %>
       <div class="float-right">
       <%= link_to(t('.infos'), project_dashboard_path(project_id: @project), class: "btn btn-info") %>
-      <%= link_to(t('.delete'), @project, method: :delete, class: "btn btn-danger") %>
+      <%= link_to(t('.schedule'), project_schedule_path(project_id: @project), class: "btn btn-info") %>
+      <% if @project.owner.id == current_user.id %>
+        <%= link_to(t('.delete'), @project, method: :delete, class: "btn btn-danger") %>
+      <% end %>
     </div>
   </div>
   <div class="card-body">
     <%= form_with(model: @project, local: true) do |form| %>
       <div class="form-group row">
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="form-group">
             <%= form.label(:name) %>
             <%= form.text_field(:name, disabled: true, class: "form-control") %>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="form-group">
             <%= form.label(:user_id) %>
             <%= form.select(:user_id, User.all.collect { |user| [user.name, user.id] }, {}, class: "form-control", disabled: true) %>
           </div>
         </div>
-      </div>
-
-      <div class="form-group row">
-        <div class="col-md-4">
+        <div class="col-md-6">
           <div class="form-group">
             <%= form.label(:user_ids) %>
             <%= form.select(:user_ids, User.all.collect { |user| [user.name, user.id] },
@@ -34,22 +34,26 @@
         </div>
       </div>
 
+      <%= link_to(t('.back'), projects_path(), class: "btn btn-info") %>
+
       <div class="float-right">
-        <%= link_to(t('.back'), projects_path(), class: "btn btn-primary") %>
-        <%= link_to(t('.schedule'), project_schedule_path(project_id: @project), class: "btn btn-warning") %>
-        <%= link_to(t('.edit'), edit_project_path(@project), class: "btn btn-primary") %>
+        <% if @project.owner.id == current_user.id %>
+          <%= link_to(t('.edit'), edit_project_path(@project), class: "btn btn-info") %>
+        <% end %>
       </div>
     <% end %>
   </div>
 </div>
 
-<div class="card mb-3 bg-outline-dark udesc-green-light">
+<div class="card mb-3 bg-light ">
   <div class="card-header h3">
-    <%= icon('fas','desktop', 'Tarefas', class: 'fa-fw h2 mb-0') %>
-    <%= link_to('Nova Tarefa', new_project_task_path(@project), class: "btn btn-success float-right") %>
+    <%= icon('fas','clipboard-list', 'Tarefas', class: 'fa-fw h2 mb-0') %>
+    <% if @project.owner.id == current_user.id %>
+      <%= link_to('Nova Tarefa', new_project_task_path(@project), class: "btn btn-success float-right") %>
+    <% end %>
   </div>
   <div class="card-body">
-    <table class="table table-striped table-success table-hover">
+    <table class="table table-striped table-bordered table-hover">
       <thead>
         <tr>
           <th> Nome </th>
@@ -72,7 +76,7 @@
             <td> <%= task.goals_end_at.present? ? I18n.l(task.goals_end_at, format: :long) : "" %> </td>
             <td> <%= task.short_detailing %> </td>
             <td class="d-flex justify-content-center">
-              <%= link_to(icon('far','eye'), project_task_path(id: task, project_id: task.project.id)) %>
+              <%= link_to(icon('far','eye'), project_task_path(id: task, project_id: task.project.id), class: "btn btn-link") %>
             </td>
           </tr>
         <% end %>

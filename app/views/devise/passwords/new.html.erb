@@ -1,16 +1,27 @@
-<h2><%= t('.forgot_your_password') %></h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="card card-login mx-auto mt-5">
+  <div class="card-header">
+    <%= image_tag('logo.svg', class: "avatar-image") %>
+    <span class="h4 align-middle"><%= t('.forgot_your_password') %></span>
   </div>
+  <div class="card-body">
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |form| %>
 
-  <div class="actions">
-    <%= f.submit t('.send_me_reset_password_instructions') %>
+      <%= form.hidden_field(:reset_password_token) %>
+
+      <div class="form-group row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <%= form.label(:email) %>
+            <%= form.password_field(:email, autocomplete: "email", autofocus: true, class: "form-control") %>
+          </div>
+        </div>
+      </div>
+
+      <%= form.submit(t('.send_me_reset_password_instructions'), class: "btn btn-info btn-block") %>
+    <% end %>
+    <br />
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <div class="card-footer clearfix small z-1">
+    <%= render("devise/shared/links") %>
+  </div>
+</div>

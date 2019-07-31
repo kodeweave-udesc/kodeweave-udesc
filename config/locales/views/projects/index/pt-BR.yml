@@ -3,3 +3,4 @@ pt-BR:
     index:
       title: "Lista de Projetos"
       new: "Novo"
+      empty_projects: "Você não possui nenhum projecto."

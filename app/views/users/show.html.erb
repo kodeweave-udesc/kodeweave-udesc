@@ -1,4 +1,4 @@
-<div class="card mb-3 bg-outline-dark udesc-green-light">
+<div class="card mb-3 bg-light ">
   <div class="card-header h3">
     <%= icon('fas','user-astronaut', t('.title', user_name: @user.name), class: 'fa-fw h2 mb-0') %>
     <%= link_to(t('.delete'), account_user_path(@user), method: :delete, class: "btn btn-danger float-right") %>
@@ -39,8 +39,8 @@
       </div>
 
       <div class="float-right">
-        <%= link_to(t('.back'), users_path(), class: "btn btn-primary") %>
-        <%= link_to(t('.edit'), edit_user_path(@user), class: "btn btn-primary") %>
+        <%= link_to(t('.back'), users_path(), class: "btn btn-info") %>
+        <%= link_to(t('.edit'), edit_user_path(@user), class: "btn btn-info") %>
       </div>
     <% end %>
   </div>
