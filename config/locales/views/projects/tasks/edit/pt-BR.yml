@@ -3,3 +3,4 @@ pt-BR:
     tasks:
       edit:
         title: "Edição da tarefa %{task_name}"
+        back: "Voltar"

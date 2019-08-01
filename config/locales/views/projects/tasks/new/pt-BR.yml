@@ -3,3 +3,4 @@ pt-BR:
     tasks:
       new:
         title: "Criação de um Novo projeto"
+        back: "Voltar"

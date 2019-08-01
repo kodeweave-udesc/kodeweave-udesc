@@ -1,4 +1,6 @@
 pt-BR:
   tasks:
     index:
-      title: "Lista de Tarefas"
+      title: "Lista de Tarefas."
+      new_project: "Novo Projeto"
+      empty_projects: "Você não está associado a nenhuma tarefa, comece criando um novo projeto."

@@ -1,8 +1,0 @@
-pt-BR:
-  account:
-    users:
-      show:
-        title: "Informações sobre o Usuário %{user_name}"
-        back: "Voltar"
-        edit: "Editar"
-        delete: "Excluir"
