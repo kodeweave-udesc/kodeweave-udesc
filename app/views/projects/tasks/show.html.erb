@@ -2,7 +2,7 @@
   <div class="card-header h3">
     <%= icon('fas','clipboard-list', t('.title', task_name: @task.name), class: 'fa-fw h2 mb-0') %>
     <% if @task.project.owner.id == current_user.id %>
-      <%= link_to(icon('fas', 'times', t('.delete')), project_task_path(id: @task.id, project_id: @task.project.id), method: :delete, class: "btn btn-danger float-right") %>
+      <%= link_to(icon('far', 'trash-alt', t('.delete')), project_task_path(id: @task.id, project_id: @task.project.id), method: :delete, class: "btn btn-danger float-right") %>
     <% end %>
   </div>
   <div class="card-body">
@@ -57,7 +57,7 @@
         </div>
       </div>
 
-      <%= link_to(icon('far', 'hand-point-left', t('.back')), project_path(@task.project), class: "btn btn-info") %>
+      <%= link_to(icon('fas', 'chevron-left', t('.back')), project_path(@task.project), class: "btn btn-info") %>
       <div class="float-right">
         <% if @task.user.id == current_user.id %>
           <%= link_to(t('.start'), '', class: "btn btn-success") %>

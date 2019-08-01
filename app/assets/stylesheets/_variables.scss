@@ -45,15 +45,16 @@ $green:   #28a745 !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
 
-$udesc-green: #336633 !default;
+$udesc-green: #139954 !default;
 $udesc-green-light: #c4f5c6 !default;
-$udesc-green-dark: #204220 !default;
-$udesc-red: #6e0e05 !default;
+$udesc-green-dark: #054B28 !default;
+$udesc-red: #EF4136 !default;
+$udesc-red-dark: #C1282A !default;
 
 $udesc-warning: rgba(186, 121, 37, 1) !default;
 $udesc-info:    rgba(64, 100, 119, 1)   !default;
-$udesc-success: $udesc-green  !default;
-$udesc-danger:  rgba(209, 87, 87, 1)    !default;
+$udesc-success: $udesc-green-dark  !default;
+$udesc-danger:  $udesc-red-dark    !default;
 $udesc-primary: $blue   !default;
 
 $colors: () !default;

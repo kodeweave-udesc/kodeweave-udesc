@@ -1,7 +1,7 @@
 <div class="card mb-3 bg-light ">
   <div class="card-header h3">
     <%= icon('fas','user-astronaut', t('.title', user_name: @user.name), class: 'fa-fw h2 mb-0') %>
-    <%= link_to(icon('fas', 'times', t('.delete')), account_user_path(@user), method: :delete, class: "btn btn-danger float-right") %>
+    <%= link_to(icon('far', 'trash-alt', t('.delete')), account_user_path(@user), method: :delete, class: "btn btn-danger float-right") %>
   </div>
 
   <div class="card-body">
@@ -39,7 +39,7 @@
       </div>
 
       <div class="float-right">
-        <%= link_to(icon('far', 'hand-point-left', t('.back')), users_path(), class: "btn btn-info") %>
+        <%= link_to(icon('fas', 'chevron-left', t('.back')), users_path(), class: "btn btn-info") %>
         <%= link_to(icon('far', 'edit', t('.edit')), edit_user_path(@user), class: "btn btn-info") %>
       </div>
     <% end %>

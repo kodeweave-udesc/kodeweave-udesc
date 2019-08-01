@@ -1,0 +1,13 @@
+<tr>
+  <td class="align-middle">
+    <%= image_tag(task.user.image, class: "avatar-image avatar-image-list") %>
+  <%= task.user.name %>
+  </td>
+  <td class="align-middle"> <%= task.name %> </td>
+  <td class="align-middle"> <%= task.goals_start_at.present? ? I18n.l(task.goals_start_at, format: :long) : "" %> </td>
+  <td class="align-middle"> <%= task.goals_end_at.present? ? I18n.l(task.goals_end_at, format: :long) : "" %> </td>
+  <td class="align-middle"> <%= task.short_detailing %> </td>
+  <td class="d-flex justify-content-center">
+    <%= link_to(icon('far','eye'), project_task_path(id: task, project_id: task.project.id), class: "btn btn-light") %>
+  </td>
+</tr>
