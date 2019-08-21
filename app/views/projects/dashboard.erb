@@ -6,12 +6,9 @@
   <div class="card-body">
 
     <div class="row">
+      <div class="col-md-3"></div>
       <div class="col-md-6 col-sm-12">
         <canvas id="pieChartStatus"></canvas>
-      </div>
-
-      <div class="col-md-6 col-sm-12">
-        <canvas id="pieChartDelivered"></canvas>
       </div>
     </div>
 
@@ -20,8 +17,8 @@
     <div class="row">
       <div class="col-12">
         <div class="progress" style="height: 30px">
-          <div class="progress-bar bg-danger" style="width: <%= @data[:tasks][:late] %>%;">Entregas em atraso <%= @data[:tasks][:late] %>%</div>
           <div class="progress-bar bg-success" style="width: <%= 100 - @data[:tasks][:late] %>%;">Entregas no praso <%= 100 - @data[:tasks][:late] %>%</div>
+          <div class="progress-bar bg-danger" style="width: <%= @data[:tasks][:late] %>%;">Entregas em atraso <%= @data[:tasks][:late] %>%</div>
         </div>
       </div>
     </div>
@@ -65,25 +62,10 @@ var myPieChart = new Chart(pieChartStatus, {
     labels: ["Iniciados", "Completos", "Não iniciados"],
     datasets: [{
       data: <%= [ @data[:tasks][:in_progress], @data[:tasks][:done], @data[:tasks][:not_started] ] %>,
-      backgroundColor: ["#2156d1", "#22bd1c", "#e0db3d"],
-      hoverBackgroundColor: ["#0e2d75", "#1f4d0b", "#ada917"]
+      hoverBackgroundColor: ["#7DCD85", "#84DD63", "#243E36"],
+      backgroundColor: ["#7DCD85", "#84DD63", "#243E36"]
     }]
   },
   options: { responsive: true }
 });
-
-var pieChartDelivered = document.getElementById("pieChartDelivered").getContext('2d');
-var myPieChart = new Chart(pieChartDelivered, {
-  type: 'doughnut',
-  data: {
-    labels: ["No Praso", "Atrasado"],
-    datasets: [{
-      data: <%= [ 100 - @data[:tasks][:late], @data[:tasks][:late] ] %>,
-      backgroundColor: ["#22bd1c", "#e8462a"],
-      hoverBackgroundColor: ["#1f4d0b", "#b5240b"]
-    }]
-  },
-  options: { responsive: true }
-});
-
 </script>

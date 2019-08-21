@@ -2,7 +2,8 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def index
-    @projects = current_user.projects + Project.where(owner: current_user)
+    @projects = Project.where(owner: current_user).or(Project.where(owner: current_user))
+
   end
 
   def show

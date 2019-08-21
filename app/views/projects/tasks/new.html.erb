@@ -26,7 +26,7 @@
         <div class="col-md-4">
           <div class="form-group">
             <%= form.label(:user_id) %>
-            <%= form.select(:user_id, User.all.collect { |user| [user.name, user.id] }, {}, class: "form-control") %>
+            <%= form.select(:user_id, @task.project.users.collect { |user| [user.name, user.id] }, {}, class: "form-control") %>
           </div>
         </div>
       </div>
@@ -64,7 +64,6 @@
 
 <script>
   $( "#task_user_id" ).select2({
-    theme: "bootstrap",
-    language: "zh-TW"
+    theme: "bootstrap"
   });
 </script>
