@@ -2,5 +2,5 @@ pt-BR:
   projects:
     tasks:
       edit:
-        title: "Edição da tarefa %{task_name}"
+        title: "Edição da tarefa %{task_name} (%{task_status})"
         back: "Voltar"

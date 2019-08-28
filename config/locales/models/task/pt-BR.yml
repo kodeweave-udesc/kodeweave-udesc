@@ -18,3 +18,8 @@ pt-BR:
         project: ""
         user: ""
         user_id: "Responsável"
+        statuses:
+          created: "Não Inicializada"
+          in_progress: "Em progresso"
+          late: "Atrasada"
+          done: "Finalizada"

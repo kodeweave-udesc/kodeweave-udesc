@@ -1,5 +1,5 @@
 <div class="col-xl-3 col-sm-6 mb-3">
-  <div class="card <%= class_color_task(task) %> o-hidden h-100">
+  <div class="card <%= taks_row_class(task) %> o-hidden h-100">
     <div class="card-header">
       <%= icon('fas','clipboard-list', t('.card.title'), class: 'fa-fw h5 mb-0') %>
     </div>
@@ -10,7 +10,7 @@
       <div class="mr-5"><%= t('.card.name_project', project_name: task.project.name) %></div>
       <div class="mr-5"><%= t('.card.name', task_name: task.name) %></div>
     </div>
-    <%=link_to(project_task_path(id: task, project_id: task.project.id), class: 'card-footer text-dark clearfix small z-1') do%>
+    <%=link_to(project_task_path(id: task, project_id: task.project.id), class: "card-footer #{taks_row_class(task)} clearfix small z-1") do%>
       <span class="float-left"><%= t('.card.details') %></span>
       <span class="float-right">
         <%= icon('fas','angle-right') %>

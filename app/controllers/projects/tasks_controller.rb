@@ -1,6 +1,6 @@
 module Projects
   class TasksController < ApplicationController
-    before_action :set_task, only: [:show, :edit, :update, :destroy]
+    before_action :set_task, only: [:show, :edit, :update, :destroy, :start, :finish]
 
     # GET /projects/1/tasks
     # GET /projects/1/tasks.json
@@ -11,6 +11,32 @@ module Projects
     # GET /projects/1/tasks/1
     # GET /projects/1/tasks/1.json
     def show
+    end
+
+    # POST /projects/1/tasks/1/start
+    def start
+      if @task.update(status: :in_progress)
+        flash[:success] = I18n.t('controllers.projects.update.success')
+
+        redirect_to(project_task_path(id: @task, project_id: project.id))
+      else
+        flash[:error] = I18n.t('controllers.projects.update.error')
+
+        render(:edit)
+      end
+    end
+
+    # POST /projects/1/tasks/1/finish
+    def finish
+      if @task.update(status: :done)
+        flash[:success] = I18n.t('controllers.projects.update.success')
+
+        redirect_to(project_task_path(id: @task, project_id: project.id))
+      else
+        flash[:error] = I18n.t('controllers.projects.update.error')
+
+        render(:edit)
+      end
     end
 
     # GET /projects/1/tasks/new
@@ -74,7 +100,11 @@ module Projects
     private
     # Use callbacks to share common setup or constraints between actions.
     def set_task
-      @task = project.tasks.find(params[:id])
+      if params[:id].present?
+        @task = project.tasks.find(params[:id])
+      else
+        @task = project.tasks.find(params[:task_id])
+      end
     end
 
     def project

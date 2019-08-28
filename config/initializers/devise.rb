@@ -6,7 +6,7 @@ Devise.setup do |config|
 
   # Add the credentials from your Google application to your secrets
   # Configure Google omniauth with proper scope
-  config.omniauth(:google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'])
+  config.omniauth(:google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'], skip_jwt: true)
 
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing

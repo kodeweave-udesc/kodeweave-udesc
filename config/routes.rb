@@ -11,7 +11,10 @@ Rails.application.routes.draw do
     get :dashboard
 
     scope module: :projects do
-      resources :tasks
+      resources :tasks do
+        post :start
+        post :finish
+      end
     end
   end
 

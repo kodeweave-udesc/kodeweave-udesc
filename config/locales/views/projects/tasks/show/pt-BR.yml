@@ -2,8 +2,9 @@ pt-BR:
   projects:
     tasks:
       show:
-        title: "Informações sobre a Tarefa %{task_name}"
+        title: "Informações sobre a Tarefa %{task_name} (%{task_status})"
         back: "Voltar"
         start: "Iniciar"
+        finish: "Finalizar"
         edit: "Editar"
         delete: "Excluir"
