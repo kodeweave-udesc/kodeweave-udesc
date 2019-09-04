@@ -32,7 +32,7 @@
             <th> Avatar </th>
             <th> Nome </th>
             <th> Em progresso </th>
-            <th> Entragues </th>
+            <th> Entregues </th>
             <th> Atrasos </th>
             <th> Total </th>
           </tr>
@@ -42,9 +42,9 @@
             <tr>
               <td> <%= image_tag(user.image, class: "avatar-image avatar-image-list") %> </td>
               <td> <%= user.name %> </td>
-              <td> <%= @project.tasks.done.where(user_id: user.id).count %> </td>
               <td> <%= @project.tasks.in_progress.where(user_id: user.id).count %> </td>
-              <td> <%= @project.tasks.late.where(user_id: user.id).count %> </td>
+              <td> <%= @project.tasks.done.where(user_id: user.id).count %> </td>
+              <td> <%= @project.tasks.late_count.where(user_id: user.id).count %> </td>
               <td> <%= @project.tasks.where(user_id: user.id).count %> </td>
             </tr>
           <% end %>

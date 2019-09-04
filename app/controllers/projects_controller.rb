@@ -101,6 +101,7 @@ class ProjectsController < ApplicationController
     {
       tasks: {
         late: progress_late,
+        late_count: @project.tasks.late,
         in_progress: @project.tasks.in_progress.count,
         done: @project.tasks.done.count,
         not_started: @project.tasks.created.count
