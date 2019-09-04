@@ -100,10 +100,10 @@ class ProjectsController < ApplicationController
   def build_data_metrics
     {
       tasks: {
-        late: 26,
-        in_progress: 5,
-        done: 50,
-        not_started: 23
+        late: @project.tasks.late.count * 1.0 / (@project.tasks.done.count + @project.tasks.late.count) * 100,
+        in_progress: @project.tasks.in_progress.count,
+        done: @project.tasks.done.count,
+        not_started: @project.tasks.created.count
       }
     }
   end
