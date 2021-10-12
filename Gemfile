@@ -8,7 +8,7 @@ gem 'devise-i18n'
 gem 'omniauth-google-oauth2', '~> 0.2.2'
 gem 'google-api-client', '~> 0.13.6'
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 5.5'
 gem 'rails', '~> 5.2.3'
 gem "pundit"
 
